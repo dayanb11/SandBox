@@ -23,9 +23,8 @@ export class AppModule
     const obs = interval(1000)
            .pipe(
                take(6),
-               tap((i: any) => console.log(i) )
+               tap((i: any) => console.log('obs'+i) )
            );
-  console.log('aaa');
   obs.subscribe((value: string) => console.log("observer 1 received " + value));
 
 obs.subscribe((value: string) => console.log("observer 2 received " + value));
