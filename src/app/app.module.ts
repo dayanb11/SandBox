@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { interval, take, tap } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -15,4 +16,18 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule
+ {
+  constructor()
+  {
+    const obs = interval(1000)
+           .pipe(
+               take(6),
+               tap((i: any) => console.log(i) )
+           );
+  console.log('aaa');
+  obs.subscribe((value: string) => console.log("observer 1 received " + value));
+
+obs.subscribe((value: string) => console.log("observer 2 received " + value));
+ }
+}

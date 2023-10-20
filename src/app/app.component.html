@@ -3,26 +3,9 @@
 </div>
 <body>
   <script>
-    import { fromEvent } from 'rxjs';
-  var button=document.getElementById("button");
-  debugger;
-// Create an Observable that will publish mouse movements
-const mouseMoves = fromEvent<MouseEvent>(button, 'mousemove');
-
-// Subscribe to start listening for mouse-move events
-const subscription = mouseMoves.subscribe(evt => {
-  // Log coords of mouse movements
-  console.log(`Coords: ${evt.clientX} X ${evt.clientY}`);
-
-  // When the mouse is over the upper-left of the screen,
-  // unsubscribe to stop listening for mouse movements
-  if (evt.clientX < 40 && evt.clientY < 40) {
-    subscription.unsubscribe();
-  }
-});
 console.log('Beni')
 
   </script>
 
-  <button [disabled]="false" id="button">Dont push"</button>
+  <button [disabled]="true" id="button">Dont push"</button>
 </body>
