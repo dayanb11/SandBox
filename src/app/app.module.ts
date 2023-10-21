@@ -20,13 +20,6 @@ export class AppModule
  {
   constructor()
   {
-    const obs = interval(1000)
-           .pipe(
-               take(6),
-               tap((i: any) => console.log('obs'+i) )
-           );
-  obs.subscribe((value: string) => console.log("observer 1 received " + value));
-
-obs.subscribe((value: string) => console.log("observer 2 received " + value));
+    
  }
 }
