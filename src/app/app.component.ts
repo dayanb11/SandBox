@@ -12,6 +12,13 @@ export class AppComponent
   title = 'Sandbox';
   constructor()
   {}
+  buttonClick()
+  {
+    var obj:any=document.getElementById("button");
+    obj.disabled="false"
+alert("click")
+
+  }
     ngOnInit()
     {
 
