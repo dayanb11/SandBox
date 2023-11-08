@@ -1,0 +1,20 @@
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+    
+    & tr,
+    & th,
+    & td {
+      border: 1px solid #0e0000;
+    }
+    
+    & th,
+    & td {
+      padding: 12px;
+    }
+  }
+  th {
+  background-color: #0e14d2;
+  color: white;
+}

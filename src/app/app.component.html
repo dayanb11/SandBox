@@ -1,12 +1,10 @@
-<div>
-  {{title}} For rxjs
-</div>
-<body>
-  <button [disabled]="false" id="button">Dont push</button>
-  <button id="button2">Change apperance</button>
-  <script>
-console.log('Beni');
-  </script>
-
- 
+    <body> 
+    <table>
+      <tr>
+        <th *ngFor="let field of items[0] | keyvalue">{{field.key}}</th>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td *ngFor="let field of item | keyvalue">{{field.value}}</td>
+      </tr>
+  </table>
 </body>

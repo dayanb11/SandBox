@@ -9,21 +9,9 @@ import { fromEvent, interval, take, tap } from 'rxjs';
 })
 export class AppComponent
  {
-  title = 'Sandbox';
-  constructor()
-  {}
-    ngOnInit()
-    {
-
-  const obs1$ = interval(1000)
-           .pipe(
-               take(6),
-               tap((i:any) => console.log('obs'+i) )
-           );
-  obs1$.subscribe((value:any) => console.log("observer 1 received " + value));
-
-obs1$.subscribe((value:any) => console.log("observer 2 received " + value));
-const obs2$=fromEvent(document,'click');
-obs2$.subscribe(evt=>console.log(evt));
-  }
- }
+  items = [
+    { מזהה: 'אחד',סטטוס: 'הושלם', משימה: 'בניה' },
+    { id: 'שניים', status: 'בעבודה', task: 'בחינה' },
+    { id: 'שלוש', status: 'כשלון', task: 'הפצה' }
+  ]
+}
